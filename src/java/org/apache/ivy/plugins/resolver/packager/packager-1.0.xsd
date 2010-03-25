@@ -94,6 +94,9 @@
             <xsd:enumeration value="tgz"/>
             <xsd:enumeration value="tar.gz"/>
             <xsd:enumeration value="tar.bz2"/>
+            
+            <!-- PKZip archive (OS X Finder) -->
+            <xsd:enumeration value="pkzip"/>
         </xsd:restriction>
     </xsd:simpleType>
 

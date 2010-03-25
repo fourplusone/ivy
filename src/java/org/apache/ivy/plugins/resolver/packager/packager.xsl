@@ -425,6 +425,21 @@
                     </xsl:if>
                 </unzip>
             </xsl:when>
+            
+            <!-- use ditto -->
+            <xsl:when test="$type = 'pkzip'">
+                <exec executable="ditto">
+                    <arg value="-xk"/>
+                    <arg value="{$file}" />
+                    <arg value="{$dir}" />
+                </exec>
+                
+                <xsl:if test="$includes">
+                    <xsl:message terminate="yes">
+                        Includes are not supported at this time in pkzip
+                    </xsl:message>
+                </xsl:if>
+            </xsl:when>
 
             <!-- TAR files, optionally compressed -->
             <xsl:when test="starts-with($type, 'tar')">
